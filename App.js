@@ -1,20 +1,17 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { LogBox } from "react-native";
+import AppNavigation from "./src/navigation/AppNavigation";
+//import { iniFirebase } from "./src/utils/firebase";
+import Toast from "react-native-toast-message";
 
+// Inicializa Firebase
+/*initFirebase();
+LogBox.ignoreAllLogs //Quita los Toast de la app que vengan por la consola*/
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <>
+    <AppNavigation />
+    <Toast />
+    </>
   );
+  
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
