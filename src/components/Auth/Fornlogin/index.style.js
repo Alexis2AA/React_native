@@ -9,7 +9,8 @@ export const style = StyleSheet.create({
         color: "#c74f4fff"
     },
     btnContainer:{
-        marginTop: 20,
+        borderRadius: 12,
+        marginTop: 25,
         width:"95%",
         alignSelf:"center"
     },
@@ -21,16 +22,29 @@ export const style = StyleSheet.create({
         justifyContent: "center",
         alignItems: "center",
         flexGrow: 0,
-        marginTop: 30,
+        marginTop: -70,
     },
-    black1:{
-        backgroundColor:"black",
-    },
+    black1: {
+    backgroundColor: "black",
+    flexDirection: "row", 
+    alignItems: "center", 
+    justifyContent: "center", 
+    paddingHorizontal: 20,
+  },
+
     whiter1:{
-        backgroundColor:"white"
+        backgroundColor:"white",
+        borderRadius: 12,
     },
          btTitle:{
         color: '#000000ff',
+        
     },
-
+    icon:{
+        width: 30,
+    height: 30,
+    resizeMode: "contain",
+    position: "absolute", 
+    left: 20, 
+  },
 })

@@ -1,4 +1,4 @@
-import { View } from "react-native"
+import { View , Image} from "react-native"
 import { useState } from "react"
 import { useFormik } from "formik"
 import { Input, Button} from "react-native-elements"
@@ -59,7 +59,7 @@ export function FormLogin(){
     return(
         
         <View style={style.container}>
-            <Input placeholder="Correo electronico" 
+            <Input placeholder="Email" 
             containerStyle={style.input}
             onChangeText={(text) => formik.setFieldValue("email",text)}
             rightIcon={
@@ -72,7 +72,7 @@ export function FormLogin(){
             errorMessage={formik.errors.email}
             />
 
-            <Input placeholder="Contraseña"
+            <Input placeholder="Password"
             secureTextEntry={!showPassword}
             containerStyle={style.input}
             onChangeText={(text) => formik.setFieldValue("password",text)}
@@ -93,20 +93,30 @@ export function FormLogin(){
                 onPress={formik.handleSubmit}
                 loading={formik.isSubmitting}
             />
-            <Button title="Register"
-                containerStyle={style.btnContainer}
-                buttonStyle={style.btn}
-                onPress={() => navigation.navigate('Register')} // el () => sirve para que no se presiones al solo entrar a la pagina al istante
-            />
+            
             <Button title="Log in with Google"
             titleStyle={style.btTitle}
                 containerStyle={style.btnContainer}
                 buttonStyle={style.whiter1}
-            />
-            <Button title="Log in with Apple"
+                icon={
+                        <Image
+                        source={require('../../../../assets/img/google.png')} // tu imagen local
+                        style={style.icon}
+                        />
+                }
+                />
+            <Button
+                title="Log in with Apple"
                 containerStyle={style.btnContainer}
                 buttonStyle={style.black1}
-            />
+                titleStyle={style.title}
+                icon={
+                    <Image
+                    source={require('../../../../assets/img/apple.jpeg')} // tu imagen local
+                    style={style.icon}
+                    />
+                }
+                />
         </View>
     )
 }

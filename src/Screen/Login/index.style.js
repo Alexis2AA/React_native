@@ -10,6 +10,6 @@ container:{
         resizeMode: "contain",
         width: "100%",
         height: 320,
-        marginTop: 20,
+        marginTop: -70,
     },
 })
