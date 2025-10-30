@@ -1,6 +1,17 @@
 import { StyleSheet } from "react-native";
 
 export const style = StyleSheet.create({
+container:{
+        flex: 1,
+        marginTop: 0,
+    },
+    
+    image:{
+        resizeMode: "contain",
+        width: "100%",
+        height: 320,
+        marginTop: 20,
+    },
     input:{
         width: "100%",
         marginTop: 20,
@@ -15,19 +26,15 @@ export const style = StyleSheet.create({
     },
     btn:{
         backgroundColor: "blue",
+        borderRadius: 12,
     },
-    container:{
-        flex: 0,
-        justifyContent: "center",
-        alignItems: "center",
-        flexGrow: 0,
-        marginTop: 30,
-    },
+   
     guest:{
         backgroundColor: 'transparent',
     },
      btTitle:{
         color: '#000000ff',
     },
-
+    
+    
 })

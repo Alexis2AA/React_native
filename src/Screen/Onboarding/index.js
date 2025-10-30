@@ -19,7 +19,7 @@ export default function Onboarding() {
                 title="Register"
                 containerStyle={style.btnContainer}
                 buttonStyle={style.btn}
-                onPress={() => navigation.navigate('')} 
+                onPress={() => navigation.navigate('Register')} 
             />
             <Button
                 title="Enter a guest"

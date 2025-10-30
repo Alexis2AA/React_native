@@ -21,37 +21,20 @@ export function FormLogin(){
         validateOnChange: false,
         onSubmit: async (formValue) => {
             try{
-                const { email, password } = formValue;
-
-                const emailNormalizado = email.trim().toLowerCase();
-                const contraNormalizado = password.trim().toLowerCase();
-                if (emailNormalizado == "alexis@gmail.com" && contraNormalizado =="alexis123"){
-                    Toast.show({
-                    type:'success',
-                    position:'bottom',
-                    text1:"Inicio de session exitos"
-                    
-                });
-                navigation.navigate('Home')
+                const auth = getAuth()
+                await signInWithEmailAndPassword(auth, formValue.email, formValue.password)
+                navigation.navigate("Home")
                 console.log(formValue)
-                }else {
-            Toast.show({
+            } catch (error){
+                Toast.show({
                 type: 'error',
                 position: 'bottom',
                 text1: "Gmail o contraseña incorrecto"
-            });
+            })
             console.log("Datos incorrectos:", formValue);
         }
-    
-            } catch (error) {
-                Toast.show({
-                    type:'error',
-                    position:'bottom',
-                    text1:"Usuario o Contraseña incorrecta"
-                })
-                console.log(error)
-            }
-        }
+    }
+            
     })
     const functionShowPassword = () => {
         setShowPassword(!showPassword)
@@ -87,7 +70,7 @@ export function FormLogin(){
             errorMessage={formik.errors.password}
             />
 
-            <Button title="Iniciar Sesion"
+            <Button title="Log in"
                 containerStyle={style.btnContainer}
                 buttonStyle={style.btn}
                 onPress={formik.handleSubmit}
@@ -116,6 +99,11 @@ export function FormLogin(){
                     style={style.icon}
                     />
                 }
+                />
+            <Button title="Recover password"
+            titleStyle={style.btTitle2}
+                containerStyle={style.btnContainer2}
+                buttonStyle={style.recover}
                 />
         </View>
     )

@@ -1,15 +1,21 @@
-import { View } from "react-native";
-import { Button } from "react-native-elements";
-import { style } from "./index.style";
-import { useNavigation } from "@react-navigation/native";
+import { ScrollView, View } from "react-native";
 
-export function Home() {
-    const navigation = useNavigation();
+import { Image } from "react-native-elements";
+import { style} from  "./index.style"
 
+export default function Home() {
     return (
-        <Text></Text>
-        /* Tambien podia usar un texto para enter a guest 
-        <Text onPress={() => navigation.navigate('')}>Enter a guest</Text>*/
-
+        <ScrollView style={style.container} >
+            <View>
+                <Image source={require("../../../assets/img/icono.png")} style={style.image} />   
+                <Image source={require("../../../assets/img/icono.png")} style={style.image} />   
+                <Image source={require("../../../assets/img/icono.png")} style={style.image} />   
+                <Image source={require("../../../assets/img/icono.png")} style={style.image} />   
+                <Image source={require("../../../assets/img/icono.png")} style={style.image} />   
+                <Image source={require("../../../assets/img/icono.png")} style={style.image} />   
+                <Image source={require("../../../assets/img/icono.png")} style={style.image} />   
+                <Image source={require("../../../assets/img/icono.png")} style={style.image} />   
+            </View>
+        </ScrollView>
     );
 }
