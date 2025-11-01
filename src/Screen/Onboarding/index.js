@@ -26,7 +26,7 @@ export default function Onboarding() {
                 containerStyle={style.btnContainer}
                 buttonStyle={style.guest}
                 titleStyle={style.btTitle}
-                onPress={() => navigation.navigate("")}// nombre de la carpeta
+                
             />
         </View>
 

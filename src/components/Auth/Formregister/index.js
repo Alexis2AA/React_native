@@ -21,7 +21,18 @@ export function FormRegister(){
         if (formValue.contraseña === formValue.confirContraseña){
         const auth = getAuth()
         await createUserWithEmailAndPassword(auth, formValue.email, formValue.contraseña)
-        }
+        Toast.show({
+            type: 'success',
+            position: 'bottom',
+            text1: "Usuario registrado correctamente"
+        });
+    } else {
+        Toast.show({
+            type: 'error',
+            position: 'bottom',
+            text1: 'Las contraseñas no coinciden'
+        });
+    }
     } catch (error) {
         Toast.show({
             type: 'error',
@@ -38,7 +49,7 @@ export function FormRegister(){
         
     }
     const functionConfirmShowPassword = () => { 
-        setShowConfirmPassword(!showPassword)
+        setShowConfirmPassword(!showConfimPassword)
         
     }
     return(
@@ -85,7 +96,7 @@ export function FormRegister(){
             />
 
             <Input placeholder="Confirmar Contraseña"
-            secureTextEntry={!showPassword}
+            secureTextEntry={!showConfimPassword}
             containerStyle={style.input}
             onChangeText={(text) => formik.setFieldValue("confirContraseña",text)}
             rightIcon={
