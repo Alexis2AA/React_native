@@ -6,8 +6,8 @@ export function initialValues(){
  }   
 }
 
-export function validationSChema(){
-    return Yup.object({
-        displayName: Yup.string().required("El nombre es obligatorio")
-    })
+export function validationSchema() {
+  return Yup.object({
+    displayName: Yup.string().required("El nombre es obligatorio")
+  });
 }

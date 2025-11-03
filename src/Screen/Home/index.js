@@ -2,11 +2,10 @@ import { ScrollView, View } from "react-native";
 import { Text } from "react-native-elements";
 import { useState } from "react";
 import { getAuth } from "firebase/auth";
-import { Image } from "react-native-elements";
 import { style} from  "./index.style"
 import {ChangeDisplayNameForm} from "../../components/User/ChangeDisplayNameForm"
 
-export function Home() {
+export default function Home() {
     const { displayName, email } = getAuth().currentUser
     const [_, setReload] = useState(false);
 
