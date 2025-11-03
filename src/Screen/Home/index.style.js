@@ -7,11 +7,9 @@ container:{
         alignItems: "center",
         paddingHorizontal: 20,
         paddingTop:70,
-        backgroundColor:"#8babdbff",
     },
     
-
-
+    
     card:{
         width: "100%",
         backgroundColor: "white",
@@ -48,7 +46,14 @@ container:{
         fontSize: 16,
         color: "#434343ff",
         textAlign: "center",
-        marginBottom: 15,    }
+        marginBottom: 15,    },
+
+    image:{
+        resizeMode: "contain",
+        width: "100%",
+        height: 320,
+        marginTop: -70,
+    },
     
     
 })

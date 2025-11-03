@@ -1,4 +1,4 @@
-import { ScrollView, View } from "react-native";
+import { ScrollView, View, Image } from "react-native";
 import { Text } from "react-native-elements";
 import { useState } from "react";
 import { getAuth } from "firebase/auth";
@@ -13,6 +13,7 @@ export default function Home() {
 
     return (
         <View style={style.container} >
+            <Image source={require("../../../assets/img/icono.png")} style={style.image} />   
             <View style={style.card}>
                 <Text style={style.welcomeText}>Bienvenido: {displayName || "Anonimo"}</Text>
                 <Text style={style.inf}>email: {email}</Text>

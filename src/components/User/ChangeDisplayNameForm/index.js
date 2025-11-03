@@ -41,11 +41,11 @@ export function ChangeDisplayNameForm(props){
                     <Input placeholder="Nombre y Apellido" 
                     rightIcon={
                     <MaterialCommunityIcons
-                        name="account-circle-outline"
+                        name="account"
                         size={24}
-                        color="#c2c2c2"
+                        color="#0015ffff"
                     />
-}
+                    }
                     onChangeText={formik.handleChange('displayName')}
                     errorMessage={formik.errors.displayName}
                     />
