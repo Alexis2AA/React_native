@@ -12,12 +12,12 @@ export default function Home() {
     const onReload = () => setReload((prevState) => !prevState);
 
     return (
-        <ScrollView style={style.container} >
-            <View>
-                <Text>Bienvenido: {displayName || "Anonimo"}</Text>
-                <Text>email: {email}</Text>
+        <View style={style.container} >
+            <View style={style.card}>
+                <Text style={style.welcomeText}>Bienvenido: {displayName || "Anonimo"}</Text>
+                <Text style={style.inf}>email: {email}</Text>
                 <ChangeDisplayNameForm onReload={onReload} />
             </View>
-        </ScrollView>
+        </View>
     );
 }
