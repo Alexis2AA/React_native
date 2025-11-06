@@ -9,7 +9,18 @@ container:{
         paddingTop:70,
     },
     
-    
+    textboton: {
+        width:"95%",
+        backgroundColor: "blue",
+        marginTop:20,
+        marginLeft:10,
+        borderRadius: 12,
+        color: "white",
+        paddingVertical: 10,
+        paddingHorizontal: 20,
+        textAlign: "center",
+        fontWeight: "700",
+    },
     card:{
         width: "100%",
         backgroundColor: "white",
