@@ -3,8 +3,14 @@ import { Button } from "react-native-elements";
 import { Image } from "react-native-elements";
 import { style} from  "./index.style"
 import { useNavigation } from "@react-navigation/native";
-export default function Onboarding() {
+export default function Onboarding({ onReloadLogin }) {
+
     const navigation = useNavigation();
+    const navigateToLogin = () => {
+        navigation.navigate('Login', {
+            onReloadLogin: onReloadLogin
+        });
+    }
     return (
         <ScrollView style={style.container} >
             <View>

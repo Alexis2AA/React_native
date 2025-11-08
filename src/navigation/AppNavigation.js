@@ -4,13 +4,14 @@ import Onboarding from "../Screen/Onboarding";
 import Register from "../Screen/Register";
 import Login from "../Screen/Login";
 import Home from "../Screen/Home";
+import  FirtView  from "../Screen/FirstView";
 const Stack = createNativeStackNavigator();
 
 export default function AppNavigation(){
     return (
         <NavigationContainer>
             <Stack.Navigator
-                initialRouteName="Onboarding"
+                initialRouteName="FirtView"
                 screenOptions={{
                     headerStyle:{ backgroundColor: 'blue'},
                     headerTintColor: '#ffff',
@@ -26,6 +27,7 @@ export default function AppNavigation(){
                     <Stack.Screen
                         name="Login" 
                         component={Login}
+                        initialParams={{ onRealoadLogin : null}}
                          options={{
                             title: 'Log in',
                             headerTintColor: '#0300b0ff',
@@ -55,6 +57,11 @@ export default function AppNavigation(){
                             backgroundColor: '#ffffffff', 
                             },
                         }}
+                    />
+                    <Stack.Screen
+                        name="FirtView" 
+                        component={FirtView}
+                        options={{ headerShown: false }}
                     />
 
                  

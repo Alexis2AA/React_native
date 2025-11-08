@@ -8,7 +8,7 @@ import {ChangeDisplayNameForm} from "../../components/User/ChangeDisplayNameForm
 import { useNavigation } from "@react-navigation/native";
 
 
-export default function Home() {
+export default function Home({ onReloadLogin }) {
     const user = getAuth().currentUser;
     const displayName = user?.displayName ?? 'Anonimo';
     const email = user?.email ?? '';
@@ -18,8 +18,15 @@ export default function Home() {
 
     const logout = () => {
         getAuth().signOut();
-        onReload();
+        onReloadLogin();
     };
+    /*
+    const logout = async() => {
+        await getAuth().signOut();
+        onReloadLogin();
+    };
+    
+    */
     
     const navigation = useNavigation();
 
