@@ -11,7 +11,7 @@ export default function AppNavigation(){
     return (
         <NavigationContainer>
             <Stack.Navigator
-                initialRouteName="FirtView"
+                initialRouteName="Onboarding"
                 screenOptions={{
                     headerStyle:{ backgroundColor: 'blue'},
                     headerTintColor: '#ffff',
@@ -23,11 +23,12 @@ export default function AppNavigation(){
                         name="Onboarding"
                         component={Onboarding}
                         options={{ headerShown: false }}
+                        headerBackVisible={false}
+                        gestureEnable={false}
                     />
                     <Stack.Screen
                         name="Login" 
                         component={Login}
-                        initialParams={{ onRealoadLogin : null}}
                          options={{
                             title: 'Log in',
                             headerTintColor: '#0300b0ff',
@@ -57,6 +58,8 @@ export default function AppNavigation(){
                             backgroundColor: '#ffffffff', 
                             },
                         }}
+                        headerBackVisible={false}
+                        gestureEnable={false}
                     />
                     <Stack.Screen
                         name="FirtView" 

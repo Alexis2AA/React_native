@@ -9,6 +9,7 @@ import { useNavigation } from "@react-navigation/native";
 
 
 export default function Home({ onReloadLogin }) {
+    const navigation = useNavigation();
     const user = getAuth().currentUser;
     const displayName = user?.displayName ?? 'Anonimo';
     const email = user?.email ?? '';
@@ -16,19 +17,22 @@ export default function Home({ onReloadLogin }) {
 
     const onReload = () => setReload((prevState) => !prevState);
 
-    const logout = () => {
-        getAuth().signOut();
-        onReloadLogin();
-    };
-    /*
-    const logout = async() => {
-        await getAuth().signOut();
-        onReloadLogin();
-    };
-    
-    */
-    
-    const navigation = useNavigation();
+    const logout = async () => {
+        try {
+            const auth = getAuth();
+            
+            await auth.signOut();
+
+            navigation.reset({
+                index : 0,
+                routes : [{ name : 'Onboarding'}],
+
+            });
+        } catch (error) {
+            console.error('Error al cerra sesión:', error)
+        }
+    }
+       
 
     return (
         <View style={style.container} >

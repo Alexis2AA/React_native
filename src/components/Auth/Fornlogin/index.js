@@ -23,7 +23,11 @@ export function FormLogin(){
             try{
                 const auth = getAuth()
                 await signInWithEmailAndPassword(auth, formValue.email, formValue.password)
-                navigation.navigate("Home")
+                navigation.reset({
+                index : 0,
+                routes : [{ name : 'Home'}],
+
+            });
                 console.log(formValue)
             } catch (error){
                 Toast.show({
